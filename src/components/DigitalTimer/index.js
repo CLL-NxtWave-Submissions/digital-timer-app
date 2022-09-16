@@ -9,7 +9,6 @@ const initialTimerSetting = {
 export default class DigitalTimer extends Component {
   state = {
     setTimerMinutes: initialTimerSetting.initialTimerMinutes,
-    setTimerSeconds: initialTimerSetting.initialTimerSeconds,
     timerMinutes: initialTimerSetting.initialTimerMinutes,
     timerSeconds: initialTimerSetting.initialTimerSeconds,
     timerIntervalId: null,
@@ -65,7 +64,6 @@ export default class DigitalTimer extends Component {
 
       return {
         setTimerMinutes: initialTimerSetting.initialTimerMinutes,
-        setTimerSeconds: initialTimerSetting.initialTimerSeconds,
         timerMinutes: initialTimerSetting.initialTimerMinutes,
         timerSeconds: initialTimerSetting.initialTimerSeconds,
         timerIntervalId: null,
@@ -86,8 +84,15 @@ export default class DigitalTimer extends Component {
     }))
 
   render() {
-    const {timerMinutes, timerSeconds, timerIntervalId} = this.state
+    const {
+      setTimerMinutes,
+      timerMinutes,
+      timerSeconds,
+      timerIntervalId,
+    } = this.state
 
+    const setTimerMinutesString =
+      setTimerMinutes < 10 ? '0'.concat(setTimerMinutes) : setTimerMinutes
     const timerMinutesString =
       timerMinutes < 10 ? '0'.concat(timerMinutes) : timerMinutes
     const timerSecondsString =
@@ -165,7 +170,7 @@ export default class DigitalTimer extends Component {
 
                 <div className="digital-timer-set-time-value-container">
                   <p className="digital-timer-set-time-value-text">
-                    {timerMinutes}
+                    {setTimerMinutesString}
                   </p>
                 </div>
 
