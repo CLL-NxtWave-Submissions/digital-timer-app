@@ -127,7 +127,7 @@
     background-image: linear-gradient(to right, #ffffff, #cffcf1, #defafe);
   }
 
-  .digital-time-content-container {
+  .digital-timer-content-container {
     flex-direction: row;
   }
 }
