@@ -48,21 +48,25 @@ export default class DigitalTimer extends Component {
   }
 
   onClickStart = () => {
-    this.setState(previousTimerState => {
-      const {setTimerMinutes, timerMinutes, timerSeconds} = previousTimerState
+    const {setTimerMinutes, timerMinutes, timerSeconds} = this.state
+
+    if (setTimerMinutes > 0) {
+      let updatedState
       const intervalId = setInterval(this.updateTimerCountdown, 1000)
 
       if (timerMinutes === 0 && timerSeconds === 0) {
-        return {
+        updatedState = {
           timerMinutes: setTimerMinutes,
+          timerIntervalId: intervalId,
+        }
+      } else {
+        updatedState = {
           timerIntervalId: intervalId,
         }
       }
 
-      return {
-        timerIntervalId: intervalId,
-      }
-    })
+      this.setState(updatedState)
+    }
   }
 
   onClickReset = () => {
