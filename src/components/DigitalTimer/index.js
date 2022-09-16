@@ -171,7 +171,8 @@ export default class DigitalTimer extends Component {
                 <button
                   type="button"
                   className="digital-timer-control-button digital-timer-set-time-direction-sign-button"
-                  onClick={timerIntervalId === null && this.onTimerDecrement}
+                  onClick={this.onTimerDecrement}
+                  disabled={timerIntervalId !== null}
                 >
                   -
                 </button>
@@ -185,7 +186,8 @@ export default class DigitalTimer extends Component {
                 <button
                   type="button"
                   className="digital-timer-control-button digital-timer-set-time-direction-sign-button"
-                  onClick={timerIntervalId === null && this.onTimerIncrement}
+                  onClick={this.onTimerIncrement}
+                  disabled={timerIntervalId !== null}
                 >
                   +
                 </button>
