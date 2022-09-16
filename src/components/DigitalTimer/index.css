@@ -73,6 +73,7 @@
   justify-content: space-around;
   align-items: center;
   margin-bottom: 2rem;
+  width: 100%;
 }
 
 .digital-timer-control {
@@ -123,8 +124,14 @@
   font-size: 2rem;
 }
 
+.digital-timer-set-time-value-text {
+  margin: 0;
+}
+
 .digital-timer-set-time-value-container {
   background-image: linear-gradient(to right, #0eeeb6, #00d9f5);
+  padding: 0.5rem 1.5rem;
+  border-radius: 0.4rem;
 }
 
 @media (min-width: 768px) {

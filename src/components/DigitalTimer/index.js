@@ -1,10 +1,17 @@
 import {Component} from 'react'
 import './index.css'
 
+const initialTimerSetting = {
+  initialTimerMinutes: 25,
+  initialTimerSeconds: 0,
+}
+
 export default class DigitalTimer extends Component {
   state = {
-    timerMinutes: 25,
-    timerSeconds: 0,
+    setTimerMinutes: initialTimerSetting.initialTimerMinutes,
+    setTimerSeconds: initialTimerSetting.initialTimerSeconds,
+    timerMinutes: initialTimerSetting.initialTimerMinutes,
+    timerSeconds: initialTimerSetting.initialTimerSeconds,
     timerIntervalId: null,
   }
 
@@ -25,7 +32,7 @@ export default class DigitalTimer extends Component {
 
       if (timerSeconds === 0) {
         timerMinutes -= 1
-        timerSeconds -= 59
+        timerSeconds = 59
       } else {
         timerSeconds -= 1
       }
@@ -57,8 +64,10 @@ export default class DigitalTimer extends Component {
       clearInterval(timerIntervalId)
 
       return {
-        timerMinutes: 25,
-        timerSeconds: 0,
+        setTimerMinutes: initialTimerSetting.initialTimerMinutes,
+        setTimerSeconds: initialTimerSetting.initialTimerSeconds,
+        timerMinutes: initialTimerSetting.initialTimerMinutes,
+        timerSeconds: initialTimerSetting.initialTimerSeconds,
         timerIntervalId: null,
       }
     })
@@ -66,12 +75,12 @@ export default class DigitalTimer extends Component {
 
   onTimerIncrement = () =>
     this.setState(previousTimerState => ({
-      timerMinutes: previousTimerState.timerMinutes + 1,
+      setTimerMinutes: previousTimerState.setTimerMinutes + 1,
     }))
 
   onTimerDecrement = () =>
     this.setState(previousTimerState => ({
-      timerMinutes: previousTimerState.timerMinutes - 1,
+      setTimerMinutes: previousTimerState.setTimerMinutes - 1,
     }))
 
   render() {
@@ -147,9 +156,9 @@ export default class DigitalTimer extends Component {
                 <button
                   type="button"
                   className="digital-timer-control-button digital-timer-set-time-direction-sign-button"
-                  onClick={timerIntervalId === null && this.onTimerIncrement}
+                  onClick={timerIntervalId === null && this.onTimerDecrement}
                 >
-                  +
+                  -
                 </button>
 
                 <div className="digital-timer-set-time-value-container">
@@ -161,9 +170,9 @@ export default class DigitalTimer extends Component {
                 <button
                   type="button"
                   className="digital-timer-control-button digital-timer-set-time-direction-sign-button"
-                  onClick={timerIntervalId === null && this.onTimerDecrement}
+                  onClick={timerIntervalId === null && this.onTimerIncrement}
                 >
-                  -
+                  +
                 </button>
               </div>
             </div>
