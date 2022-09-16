@@ -75,6 +75,13 @@
   align-items: center;
 }
 
+.digital-timer-control-button {
+  border: none;
+  outline: none;
+  background: inherit;
+  cursor: pointer;
+}
+
 .digital-timer-control-img {
   height: 1.5rem;
   width: 1.5rem;
@@ -105,7 +112,7 @@
   align-items: center;
 }
 
-.digital-timer-set-time-direction-sign,
+.digital-timer-set-time-direction-sign-button,
 .digital-timer-set-time-value-text {
   color: #1e293b;
   font-size: 2rem;
