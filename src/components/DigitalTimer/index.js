@@ -118,7 +118,7 @@ export default class DigitalTimer extends Component {
         <div className="digital-timer-content-container">
           <div className="digital-timer-display-container">
             <div className="digital-timer-details-container">
-              <p className="digital-timer-countdown">{`${timerMinutesString}:${timerSecondsString}`}</p>
+              <h1 className="digital-timer-countdown">{`${timerMinutesString}:${timerSecondsString}`}</h1>
               <p className="digital-timer-status">
                 {timerIntervalId === null ? 'Paused' : 'Running'}
               </p>
@@ -127,47 +127,42 @@ export default class DigitalTimer extends Component {
 
           <div className="digital-timer-controls-container">
             <div className="digital-timer-start-reset-controls-container">
-              <div className="digital-timer-control">
-                <button
-                  type="button"
-                  className="digital-timer-control-button"
-                  onClick={
+              <button
+                type="button"
+                className="digital-timer-control-button digital-timer-control"
+                onClick={
+                  timerIntervalId === null
+                    ? this.onClickStart
+                    : this.onClickPause
+                }
+              >
+                <img
+                  className="digital-timer-control-img"
+                  src={
                     timerIntervalId === null
-                      ? this.onClickStart
-                      : this.onClickPause
+                      ? 'https://assets.ccbp.in/frontend/react-js/play-icon-img.png'
+                      : 'https://assets.ccbp.in/frontend/react-js/pause-icon-img.png'
                   }
-                >
-                  <img
-                    className="digital-timer-control-img"
-                    src={
-                      timerIntervalId === null
-                        ? 'https://assets.ccbp.in/frontend/react-js/play-icon-img.png'
-                        : 'https://assets.ccbp.in/frontend/react-js/pause-icon-img.png'
-                    }
-                    alt={timerIntervalId === null ? 'play icon' : 'pause icon'}
-                  />
-                </button>
-
+                  alt={timerIntervalId === null ? 'play icon' : 'pause icon'}
+                />
                 <p className="digital-timer-control-name">
                   {timerIntervalId === null ? 'Start' : 'Pause'}
                 </p>
-              </div>
+              </button>
 
-              <div className="digital-timer-control">
-                <button
-                  type="button"
-                  className="digital-timer-control-button"
-                  onClick={this.onClickReset}
-                >
-                  <img
-                    className="digital-timer-control-img"
-                    src="https://assets.ccbp.in/frontend/react-js/reset-icon-img.png"
-                    alt="pause icon"
-                  />
-                </button>
+              <button
+                type="button"
+                className="digital-timer-control-button digital-timer-control"
+                onClick={this.onClickReset}
+              >
+                <img
+                  className="digital-timer-control-img"
+                  src="https://assets.ccbp.in/frontend/react-js/reset-icon-img.png"
+                  alt="reset icon"
+                />
 
                 <p className="digital-timer-control-name">Reset</p>
-              </div>
+              </button>
             </div>
 
             <div className="digital-timer-set-time-container">
