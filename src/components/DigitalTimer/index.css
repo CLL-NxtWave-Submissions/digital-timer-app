@@ -1,1 +1,126 @@
-/* Write your CSS here */
+.digital-timer-bg-container {
+  background-image: linear-gradient(to bottom, #ffffff, #cffcf1, #defafe);
+  background-size: cover;
+  min-height: 100vh;
+  height: 100%;
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.digital-timer-header {
+  color: #0f172a;
+  font-size: 2rem;
+  font-weight: 550;
+  text-align: center;
+}
+
+.digital-time-content-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.digital-timer-display-container {
+  background-image: url('https://assets.ccbp.in/frontend/react-js/digital-timer-elapsed-bg.png');
+  background-position: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.digital-timer-details-container {
+  background-color: #ffffff;
+  border-radius: 49%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 5rem;
+  width: 5rem;
+  box-shadow: 0 0 0.5rem 0 #00d9f5;
+}
+
+.digital-timer-countdown {
+  color: #00d9f5;
+  font-size: 1.5rem;
+  margin-bottom: 0;
+}
+
+.digital-timer-status {
+  color: #1e293b;
+  font-size: 0.8rem;
+  font-weight: 550;
+}
+
+.digital-timer-controls-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.digital-timer-start-reset-controls-container {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  margin-bottom: 2rem;
+}
+
+.digital-timer-control {
+  display: flex;
+  align-items: center;
+}
+
+.digital-timer-control-img {
+  height: 1.5rem;
+  width: 1.5rem;
+  margin-right: 0.5rem;
+}
+
+.digital-timer-control-name {
+  color: #1e293b;
+  font-size: 1.2rem;
+}
+
+.digital-timer-set-time-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.digital-timer-set-time-text {
+  color: #1e293b;
+  font-size: 0.8rem;
+  text-align: center;
+}
+
+.digital-timer-set-time-controls-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.digital-timer-set-time-direction-sign,
+.digital-timer-set-time-value-text {
+  color: #1e293b;
+  font-size: 2rem;
+}
+
+.digital-timer-set-time-value-container {
+  background-image: linear-gradient(to right, #0eeeb6, #00d9f5);
+}
+
+@media (min-width: 768px) {
+  .digital-timer-bg-container {
+    background-image: linear-gradient(to right, #ffffff, #cffcf1, #defafe);
+  }
+
+  .digital-time-content-container {
+    flex-direction: row;
+  }
+}
