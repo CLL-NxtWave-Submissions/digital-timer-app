@@ -76,11 +76,13 @@ export default class DigitalTimer extends Component {
   onTimerIncrement = () =>
     this.setState(previousTimerState => ({
       setTimerMinutes: previousTimerState.setTimerMinutes + 1,
+      timerMinutes: previousTimerState.timerMinutes + 1,
     }))
 
   onTimerDecrement = () =>
     this.setState(previousTimerState => ({
       setTimerMinutes: previousTimerState.setTimerMinutes - 1,
+      timerMinutes: previousTimerState.timerMinutes - 1,
     }))
 
   render() {
