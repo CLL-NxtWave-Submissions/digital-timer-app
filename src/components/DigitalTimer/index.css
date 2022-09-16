@@ -30,6 +30,11 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  height: 10vh;
+  width: 10vw;
+  margin-bottom: 2rem;
+  padding: 3rem;
+  /* background: inherit; */
 }
 
 .digital-timer-details-container {
@@ -129,5 +134,16 @@
 
   .digital-timer-content-container {
     flex-direction: row;
+  }
+
+  .digital-timer-display-container {
+    width: 50%;
+    height: 100%;
+    margin-right: 3rem;
+  }
+
+  .digital-timer-controls-container {
+    width: 50%;
+    height: 100%;
   }
 }
