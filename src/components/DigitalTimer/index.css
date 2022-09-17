@@ -8,13 +8,15 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  font-family: 'Roboto';
 }
 
 .digital-timer-header {
   color: #0f172a;
   font-size: 2rem;
-  font-weight: 550;
+  font-weight: 600;
   text-align: center;
+  margin-bottom: 2rem;
 }
 
 .digital-timer-content-container {
@@ -27,14 +29,13 @@
 .digital-timer-display-container {
   background-image: url('https://assets.ccbp.in/frontend/react-js/digital-timer-elapsed-bg.png');
   background-position: center;
+  background-size: 100%;
+  background-repeat: no-repeat;
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 10vh;
-  width: 10vw;
   margin-bottom: 2rem;
-  padding: 3rem;
-  /* background: inherit; */
+  padding: 4rem 8rem;
 }
 
 .digital-timer-details-container {
@@ -47,18 +48,20 @@
   height: 5rem;
   width: 5rem;
   box-shadow: 0 0 0.5rem 0 #00d9f5;
+  padding: 3.5rem;
 }
 
 .digital-timer-countdown {
   color: #00d9f5;
-  font-size: 1.5rem;
+  font-size: 2rem;
   margin-bottom: 0;
 }
 
 .digital-timer-status {
   color: #1e293b;
-  font-size: 0.8rem;
-  font-weight: 550;
+  font-size: 1rem;
+  font-weight: 600;
+  margin-top: 0;
 }
 
 .digital-timer-controls-container {
@@ -66,19 +69,21 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  font-weight: 600;
 }
 
 .digital-timer-start-reset-controls-container {
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
   align-items: center;
-  margin-bottom: 2rem;
+  margin-bottom: 0rem;
   width: 100%;
 }
 
 .digital-timer-control {
   display: flex;
   align-items: center;
+  margin-right: 1.5rem;
 }
 
 .digital-timer-control-button {
@@ -90,13 +95,15 @@
 }
 
 .digital-timer-control-img {
-  height: 1.5rem;
-  width: 1.5rem;
+  height: 2rem;
+  width: 2rem;
+  margin-right: 0.5rem;
 }
 
 .digital-timer-control-name {
   color: #1e293b;
-  font-size: 1.2rem;
+  font-size: 1.5rem;
+  font-weight: 650;
 }
 
 .digital-timer-set-time-container {
@@ -108,14 +115,22 @@
 
 .digital-timer-set-time-text {
   color: #1e293b;
-  font-size: 0.8rem;
+  font-size: 1rem;
   text-align: center;
+  margin-bottom: 1.5rem;
 }
 
 .digital-timer-set-time-controls-container {
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+.digital-timer-set-time-direction-sign-button {
+  margin-left: 1rem;
+  margin-right: 1rem;
+  font-size: 4.5rem;
+  font-weight: 700;
 }
 
 .digital-timer-set-time-direction-sign-button,
@@ -125,7 +140,7 @@
 }
 
 .digital-timer-set-time-value-text {
-  margin: 0;
+  margin: 0 0.5rem;
 }
 
 .digital-timer-set-time-value-container {
@@ -139,18 +154,100 @@
     background-image: linear-gradient(to right, #ffffff, #cffcf1, #defafe);
   }
 
+  .digital-timer-header {
+    font-size: 3rem;
+    margin-bottom: 4rem;
+  }
+
   .digital-timer-content-container {
     flex-direction: row;
+    justify-content: center;
   }
 
   .digital-timer-display-container {
-    width: 50%;
+    width: 60%;
     height: 100%;
-    margin-right: 3rem;
+    margin-right: 0rem;
+    padding: 12rem 18rem;
+  }
+
+  .digital-timer-details-container {
+    height: 7rem;
+    width: 7rem;
+    padding: 5.5rem;
+  }
+
+  .digital-timer-countdown {
+    font-size: 3rem;
+    margin-bottom: 0;
+  }
+
+  .digital-timer-status {
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin-top: 0;
   }
 
   .digital-timer-controls-container {
-    width: 50%;
+    width: 40%;
     height: 100%;
+  }
+
+  .digital-timer-start-reset-controls-container {
+    justify-content: center;
+    margin-right: 0;
+    margin-bottom: 0;
+  }
+
+  .digital-timer-control {
+    display: flex;
+    align-items: center;
+    margin-left: 0.6rem;
+    margin-right: 0.6rem;
+  }
+
+  .digital-timer-control-button {
+    border: none;
+    outline: none;
+    background: inherit;
+    cursor: pointer;
+    margin-right: 0.5rem;
+  }
+
+  .digital-timer-control-img {
+    height: 2.5rem;
+    width: 2.5rem;
+    margin-right: 0.5rem;
+  }
+
+  .digital-timer-control-name {
+    color: #1e293b;
+    font-size: 2rem;
+    font-weight: 650;
+  }
+
+  .digital-timer-set-time-text {
+    font-size: 1rem;
+    margin-bottom: 1.3rem;
+  }
+
+  .digital-timer-set-time-direction-sign-button {
+    margin-left: 1rem;
+    margin-right: 1rem;
+    font-size: 2.5rem;
+    font-weight: 700;
+  }
+
+  .digital-timer-set-time-value-text {
+    font-size: 2rem;
+  }
+
+  .digital-timer-set-time-value-text {
+    margin: 0 0.5rem;
+  }
+
+  .digital-timer-set-time-value-container {
+    padding: 0.5rem 1.5rem;
+    border-radius: 0.4rem;
   }
 }
